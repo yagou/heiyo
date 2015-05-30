@@ -3,19 +3,17 @@ package main
 import (
 	"fmt"
 	"net"
-	"time"
+	// "time"
 )
 
 func main() {
-	conn, err := net.Dial("tcp", "127.1.0.1:5498")
+	conn, err := net.Dial("tcp", "127.0.0.1:5498")
 	if err != nil {
 		panic(err)
 	}
-	// for {
-	body := fmt.Sprintf(" 当前是：%d 秒 ", time.Now().Second())
-	fmt.Println(body)
-	conn.Write([]byte("测试的1"))
-	time.Sleep(time.Second)
-	// }
+	sms := make([]byte, 128)
+	fmt.Print("请输入要发送的信息：")
+	fmt.Scan(&sms)
+	conn.Write(sms)
 
 }
