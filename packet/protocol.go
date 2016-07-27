@@ -62,5 +62,4 @@ func ByteToInt(b []byte) int {
 	bytesBuffer := bytes.NewBuffer(b)
 	binary.Read(bytesBuffer, binary.BigEndian, &x)
 	return int(x)
-
 }

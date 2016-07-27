@@ -1,8 +1,11 @@
 package main
 
 import (
-	"../packet"
+	"encoding/json"
 	"fmt"
+	"github.com/yagou/heiyo"
+	"github.com/yagou/heiyo/packet"
+	"github.com/yagou/heiyo/router"
 	"net"
 )
 
@@ -43,12 +46,39 @@ func client() {
 
 	for {
 		sms := make([]byte, 128)
-		// fmt.Print("请输入要发送的信息：")
+		var bodys []byte
+		fmt.Println(`
+			请选择操作：
+			1、一对一聊天
+			2、一对多聊天
+			3、获取在线列表
+		`)
 		fmt.Scan(&sms)
-		if string(sms) == "exit" {
+		switch string(sms) {
+		case "exit":
 			fmt.Println("bye ...")
 			break
+		case "1":
+			fmt.Println("暂时不支持一对一聊天")
+		case "2":
+			fmt.Println("请输入内容")
+			fmt.Scan(&sms)
+
+			rt := new(heiyo.Router)
+
+			rt.Route = router.ONE_TO_MANY
+			rt.Body = string(sms)
+			bodys, _ = json.Marshal(rt)
+		case "3":
+			rt := new(heiyo.Router)
+
+			rt.Route = router.GET_USER_LIST
+			rt.Body = string(sms)
+			bodys, _ = json.Marshal(rt)
 		}
-		conn.Write(packet.Packet(sms))
+
+		wstring := packet.Packet(bodys)
+		fmt.Printf("发送的是:%s \n", string(wstring))
+		conn.Write(wstring)
 	}
 }

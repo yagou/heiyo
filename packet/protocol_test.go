@@ -11,7 +11,7 @@ func TestPacket(t *testing.T) {
 
 func TestUnPacket(t *testing.T) {
 	body1 := Packet([]byte("吴赐有"))
-
+	// {"Route":"ONE_TO_ONE","Body":"吴赐有"}
 	// 声明一个临时缓存
 	tempBuffer := make([]byte, 0)
 
