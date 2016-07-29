@@ -2,11 +2,12 @@ package router
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
 type Router struct {
-	Route string      // 路由
-	Body  interface{} // 包内容
+	Route   string // 路由
+	Context *Context
 }
 
 // Handler defines route handler, middleware handler type.
@@ -21,14 +22,15 @@ func init() {
 
 func NewRouter(data []byte, tag string) error {
 	rt := new(Router)
+	fmt.Println(string(data))
 	err := json.Unmarshal(data, &rt)
+	fmt.Println(rt)
 	if err != nil {
 		return err
 	}
 	if rs, ok := cacheRouter[rt.Route]; ok {
-		c := &Context{Body: rt.Body.(string)}
 		for _, r := range rs {
-			r(c, tag)
+			r(rt.Context, tag)
 		}
 	}
 	return nil

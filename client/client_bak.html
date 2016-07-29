@@ -1,0 +1,74 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<title>Testing websockets</title>  
+
+
+ <script type="text/javascript" src="http://www.yggx.com/Public/home//puhuo/resource/js/jquery-1.11.3.min.js"></script>
+</head>  
+<body>  
+    
+    <div id="messages" style="border:1px  solid red;height:300px;overflow-y:auto;"></div>  
+    <div style="margin-top:20px;">  
+        <textarea style="height:200px;width:100%" id="send_text"></textarea>
+        <input type="submit" value="发送信息" onclick="start()" />  
+    </div>  
+    <script type="text/javascript">  
+        var webSocket =  new WebSocket('ws://192.168.188.108:5498/ws');  
+        
+        webSocket.onerror = function(event) {  
+            onError(event)  
+        };  
+        
+        webSocket.onopen = function(event) {  
+            onOpen(event)  
+        };  
+        
+        webSocket.onmessage = function(event) {  
+            onMessage(event)  
+        };  
+        
+        function onMessage(event) {  
+            document.getElementById('messages').innerHTML   
+                += '<br />' + event.data;  
+                $('#messages').scrollTop( $('#messages')[0].scrollHeight );
+        }  
+  
+        function onOpen(event) {  
+            document.getElementById('messages').innerHTML = '连接成功';  
+        }  
+  
+        function onError(event) {  
+            alert(event.data);  
+            alert("error");  
+        }  
+        
+        function start() {  
+            var send_text = $('#send_text').val();
+             $('#send_text').val("");
+            if (send_text.trim().length <= 0){
+                alert("请输入要发送的内容");
+                return false ;
+            }
+            
+            var datas = {};
+
+            datas['Route'] = "ONE_TO_MANY";
+            datas['Context'] = {};
+            datas['Context']['Body'] = send_text.replace(/\n/g,"<BR>") ;
+            datas['Context']['Event'] = "start"
+            webSocket.send('ayou_heiyo\n'+ JSON.stringify(datas)+'\n');  
+            return false;  
+        }  
+        document.onkeydown=function(event){
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+                
+             if(e && e.keyCode==13){ // enter 键
+                return start()
+            }
+
+        }; 
+
+    </script>  
+</body>  
+</html> 

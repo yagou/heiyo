@@ -12,6 +12,14 @@ import (
 
 func Websockets() {
 	fmt.Println("start websockets")
+
+	http.Handle("/css/", http.FileServer(http.Dir("client")))
+	http.Handle("/js/", http.FileServer(http.Dir("client")))
+	http.Handle("/fonts/", http.FileServer(http.Dir("client")))
+
+	http.Handle("/images/", http.FileServer(http.Dir("client")))
+	http.Handle("/lib/", http.FileServer(http.Dir("client")))
+
 	http.Handle("/ws", websocket.Handler(countServer))
 	http.HandleFunc("/", Templates)
 	http.ListenAndServe(":5498", nil)

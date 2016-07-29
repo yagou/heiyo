@@ -1,0 +1,146 @@
+/* CSS Document */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {margin:0;padding:0;border:0;vertical-align:baseline;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+ol,ul {list-style:none;}
+blockquote,q {quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after {content:'';content:none;}
+table {border-collapse:collapse;border-spacing:0;}
+* {tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:rgba(0,0,0,0);-ms-tap-highlight-color:rgba(0,0,0,0);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+input,select,textarea{-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-appearance:none;border:0;border-radius:0;font-family:Microsoft YaHei;}
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset;}
+:focus{outline:0}
+body{color:#666; font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;}
+html,body{font-size:20px;-webkit-text-size-adjust:none; line-height:1.4em;}
+a{color:#666;text-decoration:none;}
+.hide{display:none;}
+/*htmlChat*/
+.htmlChat{}
+.contain{position:fixed; top:50%; left:50%; z-index:1; 
+	width:940px; height:700px; margin-left:-470px; margin-top:-350px; 
+	border:1px solid #fff;box-shadow: 0px 0px 60px rgba(216,216,216,0.85);}
+.contain2{position:fixed; top:0; left:0; z-index:1; 
+	width:100%; height:700px; margin-left:0; margin-top:0; 
+	border:1px solid #fff;}
+.contain2 .leftPart{width:80%;}
+.contain2 .rightPart{width:20%;}
+/*head*/
+h2{font-size:18px!important;line-height:60px;}
+h2.head{width:100%; height:60px; background:#0099ff url(../images/icon-line.png) 190px 0 no-repeat; color:#fff;}
+h2.head img{float:left;}
+h2.head b{float:left; font-weight:normal; text-indent:12px;}
+h2.head a{float:right;}
+h2.head i{width:40px; height:60px; display:inline-block; background:url(../images/icon02.png) no-repeat;}
+h2.head i.bigger{background-position:-108px 13px;}
+h2.head i.close{background-position:-75px 13px;}
+h2.head i.small{background-position:-2px 13px;}
+
+h2.head a:hover i.bigger{background-position:-108px -36px;}
+h2.head a:hover i.close{background-position:-75px -36px;}
+h2.head a:hover i.small{background-position:-2px -36px;}
+/*content*/
+.content{width:100%; height:100%;}
+.leftPart{width:660px; height:640px; float:left;  position:relative;}
+.leftPart .chatTop{ width:100%; height:446px; overflow-y:scroll; padding-top:48px; padding-bottom:20px;}
+.leftPart .chatTop h4{height:44px; width:100%; background:#f2f2f2; color:#666; font-size:16px; line-height:44px; font-weight:normal; text-align:center; position:absolute; top:0; left:0; z-index:10;}
+.leftPart .chatTop h4 b{ color:#333; font-weight:normal; margin:0 5px;}
+.leftPart .chatTop p{color:#ccc; font-size:14px; line-height:32px; text-align:center;}
+.leftPart .chatTop p a{color:#ccc; transition:all 0.5s;}
+.leftPart .chatTop p a:hover{color:#09f;}
+/*chatwith*/
+.chatwith{ width:100%; margin-top:20px; float:left;}
+.chatwith dl dt{float:left; margin-left:22px; width:63px;}
+.chatwith dl img{ border-radius:50px; float:left;width:46px; }
+.chatwith dl dd{float:left; width:80%; font-size:14px;}
+.chatwith dl em{float:left; text-decoration:none; font-style:normal; color:#999;}
+.chatwith dl dd span{colro:#999; position: relative; padding: 3px 4px; display:inline-block; border: 2px solid #f2f2f2; background:#f2f2f2; text-align: center; color: #333;  -webkit-border-top-left-radius: 240px 140px; -webkit-border-top-right-radius: 240px 140px;    -webkit-border-bottom-right-radius: 240px 140px; -webkit-border-bottom-left-radius: 240px 140px;  -moz-border-radius: 240px / 140px;
+border-radius: 5px / 4px; text-align:left; line-height:20px;}
+.chatwith dl dd span:before{content: ""; top: 10px; bottom: auto; left: -12px; border-width: 5px 12px 5px 0; border-color: transparent #f2f2f2; position: absolute; border-style: solid; display: block; width: 0;}
+/*mytalk*/
+.mytalk{ width:100%; margin-top:20px; float:right;}
+.mytalk dl dt{float:right; margin-left:22px; width:63px;}
+.mytalk dl img{ border-radius:50px; width:46px;}
+.mytalk dl dd{float:right; width:80%; font-size:14px;}
+.mytalk dl em{float:right; text-decoration:none; font-style:normal; color:#999;}
+.mytalk dl dd span{colro:#999; position: relative; padding: 3px 4px; display:inline-block; border: 2px solid #8dd1ff; background:#8dd1ff; text-align: center; color: #333;  -webkit-border-top-left-radius: 240px 140px; -webkit-border-top-right-radius: 240px 140px;    -webkit-border-bottom-right-radius: 240px 140px; -webkit-border-bottom-left-radius: 240px 140px;  -moz-border-radius: 240px / 140px;
+border-radius: 5px / 4px; text-align:left; float:right;line-height:20px;}
+.mytalk dl dd span:before{content: ""; top: 5px; bottom: auto; right: -10px; border-width: 5px 0px 5px 10px; border-color: transparent #8dd1ff; position: absolute; border-style: solid; display: block; width: 0;}
+
+/*chatBottom*/
+.leftPart .chatBottom{ width:100%; height:253px; border-top:1px solid #dbdbdb; }
+.chatBottom .menu{ width:100%; float:left;}
+.chatBottom .menu a{float:left; margin-left:20px;}
+.chatBottom .menu a i{width:22px; height:22px; display:inline-block; background:url(../images/icon02.png) no-repeat; vertical-align:middle; margin-top:10px;}
+.chatBottom .menu a i.bq{background-position:-243px -10px;}
+.chatBottom .menu a i.zt{background-position:-292px -10px;}
+.chatBottom .menu a i.jp{background-position:-344px -10px;}
+.chatBottom .menu a i.wd{background-position:-397px -10px;}
+.chatBottom .menu a:hover i.bq{background-position:-243px -50px;}
+.chatBottom .menu a:hover i.zt{background-position:-292px -50px;}
+.chatBottom .menu a:hover i.jp{background-position:-344px -50px;}
+.chatBottom .menu a:hover i.wd{background-position:-397px -50px;}
+/*chatText*/
+.chatText textarea{width:100%; height:100px; border:1px solid #fff; max-height:100px;  padding:5px; font-size:14px;}
+.button{float:right; font-size:14px; color:#999;padding-right:10px; margin-top:10px;}
+.button b{font-weight:normal; margin-right:10px;}
+.button a.btn{width:100px; text-align:center; height:32px; line-height:32px; display:inline-block; border:1px solid #ddd; border-radius:4px; margin-right:10px; transition:all 0.5s;}
+.button a.blue{background:#0288e6; border:1px solid #0288e6; color:#fff;}
+.button a.blue:hover{background:#0c80d1;}
+.button a.gry{background:#f2f2f2; border:1px solid #e5e5e5;}
+.button a.gry:hover{background:#ddd;}
+/*rightPart*/
+.rightPart{ width:278px;  height:640px; float:right; border-left:1px solid #efefef;}
+.tab {height:44px; background:#f2f2f2; }
+.tab li{width:50%; float:left;text-align:center;}
+.tab li a{ color:#666; font-size:14px; line-height:44px;}
+.tab li.active{background:#fff;}
+/*tabbox*/
+.tabbox{width:100%;}
+.tabbox span{font-size:14px; line-height:24px; color:#333; text-indent:32px; width:100%; display:inline-block; padding:0 10px;}
+.tabbox p{font-size:14px; line-height:24px; color:#333; padding:0 10px;}
+.tabbox p em{color:#ff6c00; font-style:normal;}
+.tabbox .ads{margin-top:20px;}
+
+/*iphone 6plus 等*/
+@media screen and (max-width:940px) {
+.contain{position:fixed; top:0; left:0; z-index:1; 
+	width:100%; height:700px; 
+	margin-top:0; margin-left:0;
+	border:1px solid #fff;}
+.leftPart{width:100%; height:640px; float:left;  position:relative;}
+.contain2 .leftPart{width:100%;}
+
+.mytalk dl dd{float:right; width:80%; font-size:14px;}
+.chatwith dl dd{float:left; width:80%; font-size:14px;}
+.rightPart{display:none;}
+}
+/*iphone 6*/
+@media screen and (max-width:480px) {	
+.leftPart .chatTop{ width:100%; height:400px; overflow-y:scroll; padding-top:48px; padding-bottom:20px;}
+h2.head{display:none;}
+.chatText textarea{ height:150px;  max-height:150px;}
+
+.mytalk dl dt{float:right; margin-left:0px; width:10%;}
+.mytalk dl dd{float:right; width:80%; font-size:14px;}
+.mytalk dl dt img{width:100%;}
+.chatwith dl dt{float:left; margin-left:16px; width:10%;}
+.chatwith dl dt img{width:100%;}
+.chatwith dl dd{float:right; width:80%; font-size:14px;}
+.button b{font-size:12px;}
+.button a.btn{width:80px; text-align:center; height:32px; line-height:32px; display:inline-block; border:1px solid #ddd; border-radius:4px; margin-right:10px; transition:all 0.5s;}
+}
+/*iphone 5*/
+@media screen and (max-width:400px) {
+.leftPart .chatTop{ width:100%; height:400px; overflow-y:scroll; padding-top:48px; padding-bottom:20px;}
+.chatText textarea{ height:80px;  max-height:80px;}	
+
+}
+/*iphone 4*/
+@media screen and (max-width:320px) {
+.leftPart .chatTop{ width:100%; height:280px; overflow-y:scroll; padding-top:48px; padding-bottom:20px;}
+.chatText textarea{ height:80px;  max-height:100px;}	
+.button b{width:100%; display:inline-block;}	
+}
+
+
+
+
