@@ -57,6 +57,8 @@ func countServer(ws *websocket.Conn) {
 		}
 	}(readerBody, tag)
 
+	// 登录誰
+
 	// 读取数据
 	for {
 		n, err := ws.Read(buffer)

@@ -1,0 +1,10 @@
+{
+	"app_name": "heiyo",
+	"base_url": "http://localhost:5498",
+	"port": 5498,
+	"verbose": true,
+	"static_dir": "static",
+	"view_dir": "views",
+	"database": "mysql",
+	"database_conn": ""
+}

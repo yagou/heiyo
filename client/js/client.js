@@ -6,7 +6,7 @@ var client_app = function(){
 		webSocket.onerror = function(event) {  
 		    onError(event)  
 		};  
-
+        
 		webSocket.onopen = function(event) {  
 		    onOpen(event)  
 		};  
